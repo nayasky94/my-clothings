@@ -5,31 +5,33 @@ import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 
 interface NavItem {
-  title: string
-  href: string
+    title: string
+    href: string
 }
 
 const navItems: NavItem[] = [
-  { title: '홈', href: '/' },
+    { title: '홈', href: '/' },
+    { title: '오늘의 착장', href: '/outfit' },
+    { title: '옷장', href: '/wardrobe' },
 ]
 
 export function MainNav() {
-  const pathname = usePathname()
+    const pathname = usePathname()
 
-  return (
-    <nav className="flex items-center space-x-6 lg:space-x-8">
-      {navItems.map(item => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className={cn(
-            'hover:text-primary text-sm font-medium transition-colors',
-            pathname === item.href ? 'text-foreground' : 'text-foreground/60'
-          )}
-        >
-          {item.title}
-        </Link>
-      ))}
-    </nav>
-  )
+    return (
+        <nav className="flex items-center space-x-6 lg:space-x-8">
+            {navItems.map(item => (
+                <Link
+                    key={item.href}
+                    href={item.href}
+                    className={cn(
+                        'hover:text-primary text-sm font-medium transition-colors',
+                        pathname === item.href ? 'text-foreground' : 'text-foreground/60'
+                    )}
+                >
+                    {item.title}
+                </Link>
+            ))}
+        </nav>
+    )
 }
