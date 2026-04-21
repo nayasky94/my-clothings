@@ -63,13 +63,13 @@ NOTION_DATABASE_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ### 4. Notion 데이터베이스 스키마
 
-| 필드명 | Notion 타입 | 설명 |
-|--------|------------|------|
-| Title | title | 옷 이름 |
-| Category | select | 상의 / 하의 / 아우터 / 신발 / 액세서리 |
-| Tags | multi_select | 캐주얼, 여름, 면 등 |
-| Published | date | 구매일 |
-| Status | select | 보유중 / 처분 |
+| 필드명    | Notion 타입  | 설명                                   |
+| --------- | ------------ | -------------------------------------- |
+| Title     | title        | 옷 이름                                |
+| Category  | select       | 상의 / 하의 / 아우터 / 신발 / 액세서리 |
+| Tags      | multi_select | 캐주얼, 여름, 면 등                    |
+| Published | date         | 구매일                                 |
+| Status    | select       | 보유중 / 처분                          |
 
 ### 5. 개발 서버 실행
 

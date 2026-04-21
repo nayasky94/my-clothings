@@ -15,146 +15,145 @@ Notion을 CMS로 활용하여 보유 중인 옷을 체계적으로 정리하고 
 ## 개발 워크플로우
 
 1. **작업 계획**
-    - 기존 코드베이스를 학습하고 현재 상태를 파악
-    - 새로운 작업을 포함하도록 `ROADMAP.md` 업데이트
-    - 우선순위 작업은 마지막 완료된 작업 다음에 삽입
+   - 기존 코드베이스를 학습하고 현재 상태를 파악
+   - 새로운 작업을 포함하도록 `ROADMAP.md` 업데이트
+   - 우선순위 작업은 마지막 완료된 작업 다음에 삽입
 
 2. **작업 생성**
-    - 기존 코드베이스를 학습하고 현재 상태를 파악
-    - `/tasks` 디렉토리에 새 작업 파일 생성
-    - 명명 형식: `XXX-description.md` (예: `001-setup.md`)
-    - 고수준 명세서, 관련 파일, 수락 기준, 구현 단계 포함
-    - **API/비즈니스 로직 작업 시 "## 테스트 체크리스트" 섹션 필수 포함 (Playwright MCP 테스트 시나리오 작성)**
-    - 예시를 위해 `/tasks` 디렉토리의 마지막 완료된 작업 참조. 예를 들어, 현재 작업이 `012`라면 `011`과 `010`을 예시로 참조.
-    - 이러한 예시들은 완료된 작업이므로 내용이 완료된 작업의 최종 상태를 반영함 (체크된 박스와 변경 사항 요약). 새 작업의 경우, 문서에는 빈 박스와 변경 사항 요약이 없어야 함. 초기 상태의 샘플로 `000-sample.md` 참조.
+   - 기존 코드베이스를 학습하고 현재 상태를 파악
+   - `/tasks` 디렉토리에 새 작업 파일 생성
+   - 명명 형식: `XXX-description.md` (예: `001-setup.md`)
+   - 고수준 명세서, 관련 파일, 수락 기준, 구현 단계 포함
+   - **API/비즈니스 로직 작업 시 "## 테스트 체크리스트" 섹션 필수 포함 (Playwright MCP 테스트 시나리오 작성)**
+   - 예시를 위해 `/tasks` 디렉토리의 마지막 완료된 작업 참조. 예를 들어, 현재 작업이 `012`라면 `011`과 `010`을 예시로 참조.
+   - 이러한 예시들은 완료된 작업이므로 내용이 완료된 작업의 최종 상태를 반영함 (체크된 박스와 변경 사항 요약). 새 작업의 경우, 문서에는 빈 박스와 변경 사항 요약이 없어야 함. 초기 상태의 샘플로 `000-sample.md` 참조.
 
 3. **작업 구현**
-    - 작업 파일의 명세서를 따름
-    - 기능과 기능성 구현
-    - **API 연동 및 비즈니스 로직 구현 시 Playwright MCP로 테스트 수행 필수**
-    - 각 단계 후 작업 파일 내 단계 진행 상황 업데이트
-    - 구현 완료 후 Playwright MCP를 사용한 E2E 테스트 실행
-    - 테스트 통과 확인 후 다음 단계로 진행
-    - 각 단계 완료 후 중단하고 추가 지시를 기다림
+   - 작업 파일의 명세서를 따름
+   - 기능과 기능성 구현
+   - **API 연동 및 비즈니스 로직 구현 시 Playwright MCP로 테스트 수행 필수**
+   - 각 단계 후 작업 파일 내 단계 진행 상황 업데이트
+   - 구현 완료 후 Playwright MCP를 사용한 E2E 테스트 실행
+   - 테스트 통과 확인 후 다음 단계로 진행
+   - 각 단계 완료 후 중단하고 추가 지시를 기다림
 
 4. **로드맵 업데이트**
-    - 로드맵에서 완료된 작업을 완료 표시로 체크
+   - 로드맵에서 완료된 작업을 완료 표시로 체크
 
 ## 개발 단계
 
-### Phase 1: 애플리케이션 골격 구축
+### Phase 1: 애플리케이션 골격 구축 ✅
 
 - **Task 001: 프로젝트 구조 및 라우팅 설정** - 완료
-    - See: `/tasks/001-project-scaffolding.md`
-    - [x] Next.js 15 App Router 기반 페이지 라우팅 구조 생성 (`/`, `/today`, `/closet`)
-    - [x] 홈 페이지, 오늘의 착장 페이지, 옷장 페이지 기본 스캐폴딩 완료
-    - [x] 상단 네비게이션 헤더 컴포넌트 구성 (홈/오늘의 착장/옷장 링크)
-    - [x] 스타터킷 클린업 및 프로젝트 초기 설정 완료
-    - [x] `src/lib/notion.ts` 기본 구조 파일 생성
+  - See: `/tasks/001-project-scaffolding.md`
+  - [x] Next.js 15 App Router 기반 페이지 라우팅 구조 생성 (`/`, `/outfit`, `/wardrobe`)
+  - [x] 홈 페이지, 오늘의 착장 페이지, 옷장 페이지 기본 스캐폴딩 완료
+  - [x] 상단 네비게이션 헤더 컴포넌트 구성 (홈/오늘의 착장/옷장 링크)
+  - [x] 스타터킷 클린업 및 프로젝트 초기 설정 완료
+  - [x] `src/lib/notion.ts` 기본 구조 파일 생성
 
-- **Task 002: 타입 정의 및 환경 변수 스키마 설계**
-    - Notion 데이터 모델 TypeScript 인터페이스 정의 (`Clothing`, `Category`, `Tag` 등)
-    - 착장 기록 타입 정의 (`Outfit`: id, date, clothingIds, clothingNames, createdAt)
-    - Notion API 응답 파싱 타입 정의 (`NotionClothingPage`)
-    - Zod 기반 환경 변수 검증 스키마 작성 (`NOTION_API_KEY`, `NOTION_DATABASE_ID`)
-    - 로컬 스토리지 키 상수 및 직렬화 타입 정의
-    - 전역 공용 타입을 `src/types` 디렉토리에 집중 배치
+- **Task 002: 타입 정의 및 환경 변수 스키마 설계** - 완료
+  - [x] Notion 데이터 모델 TypeScript 인터페이스 정의 (`Clothing`, `NotionClothingPage`)
+  - [x] 착장 기록 타입 정의 (`Outfit`: id, date, clothingIds, clothingNames, createdAt)
+  - [x] Zod 기반 환경 변수 검증 스키마 작성 (`NOTION_API_KEY`, `NOTION_DATABASE_ID`)
+  - [x] 로컬 스토리지 키 상수 및 직렬화 타입 정의 (`OUTFIT_STORAGE_KEY`)
+  - [x] 전역 공용 타입을 `src/types` 디렉토리에 집중 배치
 
-- **Task 003: 루트 레이아웃 및 공통 레이아웃 완성**
-    - 루트 레이아웃 메타데이터 설정 (title, description, favicon)
-    - 상단 네비게이션 헤더 스타일링 및 활성 링크 강조 처리
-    - 전체 페이지 공통 컨테이너 및 반응형 그리드 기본값 적용
-    - 다크/라이트 모드 기본 토큰 설정 (TailwindCSS v4 기준)
-    - 404 및 에러 페이지(`not-found.tsx`, `error.tsx`) 골격 생성
+- **Task 003: 루트 레이아웃 및 공통 레이아웃 완성** - 완료
+  - [x] 루트 레이아웃 메타데이터 설정 (title template, metadataBase, icons, openGraph)
+  - [x] 상단 네비게이션 헤더 스타일링 및 활성 링크 강조 처리 (usePathname 기반)
+  - [x] 전체 페이지 공통 Header/Footer를 루트 레이아웃으로 통일 (페이지 중복 제거)
+  - [x] 다크/라이트 모드 토큰 설정 및 ThemeToggle Header 배치
+  - [x] 404 및 에러 페이지(`not-found.tsx`, `error.tsx`) 골격 생성
 
 ### Phase 2: UI/UX 완성 (더미 데이터 활용)
 
 - **Task 004: 공통 UI 컴포넌트 라이브러리 구축** - 우선순위
-    - shadcn/ui 기반 Button, Card, Badge, Input, Tabs, Skeleton 컴포넌트 설치
-    - 옷 카드(`ClothingCard`) 공용 컴포넌트 설계: 이름/카테고리/태그/구매일 표시
-    - 착장 카드(`OutfitCard`) 공용 컴포넌트 설계: 날짜/선택된 옷 이름 목록 표시
-    - 카테고리 필터 탭(`CategoryTabs`) 컴포넌트 구현
-    - 검색 입력(`SearchInput`) 컴포넌트 구현 (디바운스 지원)
-    - 빈 상태 안내(`EmptyState`) 공용 컴포넌트 구현
-    - 더미 데이터 생성 유틸리티 작성 (`src/lib/mock-data.ts`)
+  - shadcn/ui 기반 Button, Card, Badge, Input, Tabs, Skeleton 컴포넌트 설치
+  - 옷 카드(`ClothingCard`) 공용 컴포넌트 설계: 이름/카테고리/태그/구매일 표시
+  - 착장 카드(`OutfitCard`) 공용 컴포넌트 설계: 날짜/선택된 옷 이름 목록 표시
+  - 카테고리 필터 탭(`CategoryTabs`) 컴포넌트 구현
+  - 검색 입력(`SearchInput`) 컴포넌트 구현 (디바운스 지원)
+  - 빈 상태 안내(`EmptyState`) 공용 컴포넌트 구현
+  - 더미 데이터 생성 유틸리티 작성 (`src/lib/mock-data.ts`)
 
 - **Task 005: 옷장 페이지 UI 구현 (더미 데이터)**
-    - 전체 옷 목록 카드 그리드 렌더링 (반응형 그리드: 모바일 2열, 태블릿 3열, 데스크톱 4열)
-    - 카테고리 탭 필터 UI (전체/상의/하의/아우터/신발/액세서리)
-    - 검색창 UI 및 실시간 키워드 필터링 로직 (더미 데이터 대상)
-    - 카테고리 필터와 검색 AND 조건 동시 적용
-    - 결과 없을 경우 빈 상태 메시지 표시
-    - 로딩 상태 Skeleton UI 적용
+  - 전체 옷 목록 카드 그리드 렌더링 (반응형 그리드: 모바일 2열, 태블릿 3열, 데스크톱 4열)
+  - 카테고리 탭 필터 UI (전체/상의/하의/아우터/신발/액세서리)
+  - 검색창 UI 및 실시간 키워드 필터링 로직 (더미 데이터 대상)
+  - 카테고리 필터와 검색 AND 조건 동시 적용
+  - 결과 없을 경우 빈 상태 메시지 표시
+  - 로딩 상태 Skeleton UI 적용
 
 - **Task 006: 오늘의 착장 페이지 UI 구현 (더미 데이터)**
-    - 선택 가능한 옷 카드 그리드 렌더링
-    - 옷 카드 클릭 시 선택/해제 토글 상태 관리 (시각적 강조 처리)
-    - 하단 고정 요약 영역: 선택된 옷 개수 및 이름 목록 표시
-    - "착장 저장하기" 버튼 UI (선택된 옷이 없으면 비활성화)
-    - 저장 완료 후 홈 페이지 이동 플로우 구성 (임시로 `console.log` 연결)
-    - 모바일 하단 고정 영역 safe-area 대응
+  - 선택 가능한 옷 카드 그리드 렌더링
+  - 옷 카드 클릭 시 선택/해제 토글 상태 관리 (시각적 강조 처리)
+  - 하단 고정 요약 영역: 선택된 옷 개수 및 이름 목록 표시
+  - "착장 저장하기" 버튼 UI (선택된 옷이 없으면 비활성화)
+  - 저장 완료 후 홈 페이지 이동 플로우 구성 (임시로 `console.log` 연결)
+  - 모바일 하단 고정 영역 safe-area 대응
 
 - **Task 007: 홈 페이지 UI 구현 (더미 데이터)**
-    - 최근 착장 카드 목록 렌더링 (날짜 내림차순)
-    - 착장 카드: 날짜, 선택된 옷 이름 목록 표시
-    - 착장 기록이 없을 경우 빈 상태 안내 메시지 표시
-    - "오늘의 착장 기록하기" CTA 버튼 (오늘의 착장 페이지로 이동)
-    - 반응형 그리드 레이아웃 적용
+  - 최근 착장 카드 목록 렌더링 (날짜 내림차순)
+  - 착장 카드: 날짜, 선택된 옷 이름 목록 표시
+  - 착장 기록이 없을 경우 빈 상태 안내 메시지 표시
+  - "오늘의 착장 기록하기" CTA 버튼 (오늘의 착장 페이지로 이동)
+  - 반응형 그리드 레이아웃 적용
 
 ### Phase 3: 핵심 기능 구현
 
 - **Task 008: Notion API 환경 설정 및 연동 모듈 구현**
-    - `@notionhq/client` 패키지 설치 및 Notion Integration 가이드 문서화
-    - `.env.local` 템플릿 파일 생성 (`NOTION_API_KEY`, `NOTION_DATABASE_ID`)
-    - Zod 기반 환경 변수 검증 로직 추가
-    - `src/lib/notion.ts` 완성: `getClothingList()` 함수 구현 (`Status = 보유중` 필터, `Published` 내림차순 정렬)
-    - Notion 페이지 응답을 `Clothing` 타입으로 매핑하는 파서 작성 (`parseNotionPage`)
-    - 에러 핸들링 및 추적 가능한 로그 추가
-    - Playwright MCP로 실제 Notion 데이터베이스 연동 확인 테스트 수행
+  - `@notionhq/client` 패키지 설치 및 Notion Integration 가이드 문서화
+  - `.env.local` 템플릿 파일 생성 (`NOTION_API_KEY`, `NOTION_DATABASE_ID`)
+  - Zod 기반 환경 변수 검증 로직 추가
+  - `src/lib/notion.ts` 완성: `getClothingList()` 함수 구현 (`Status = 보유중` 필터, `Published` 내림차순 정렬)
+  - Notion 페이지 응답을 `Clothing` 타입으로 매핑하는 파서 작성 (`parseNotionPage`)
+  - 에러 핸들링 및 추적 가능한 로그 추가
+  - Playwright MCP로 실제 Notion 데이터베이스 연동 확인 테스트 수행
 
 - **Task 009: 옷장 페이지 실데이터 연동**
-    - 서버 컴포넌트에서 `getClothingList()` 호출하여 옷 목록 조회
-    - 더미 데이터를 실제 Notion 응답 데이터로 교체
-    - 카테고리 필터 및 검색 기능을 실제 데이터 기준으로 동작 검증
-    - API 오류 발생 시 에러 상태 UI 표시
-    - Notion 응답 캐시 전략 적용 (`revalidate` 옵션 설정)
-    - Playwright MCP로 필터/검색/빈 상태 E2E 시나리오 테스트
+  - 서버 컴포넌트에서 `getClothingList()` 호출하여 옷 목록 조회
+  - 더미 데이터를 실제 Notion 응답 데이터로 교체
+  - 카테고리 필터 및 검색 기능을 실제 데이터 기준으로 동작 검증
+  - API 오류 발생 시 에러 상태 UI 표시
+  - Notion 응답 캐시 전략 적용 (`revalidate` 옵션 설정)
+  - Playwright MCP로 필터/검색/빈 상태 E2E 시나리오 테스트
 
 - **Task 010: 오늘의 착장 페이지 실데이터 연동 및 저장 로직**
-    - Notion에서 불러온 실제 옷 목록으로 선택 UI 구동
-    - 로컬 스토리지 CRUD 유틸리티 작성 (`src/lib/outfit-storage.ts`): 저장/조회/삭제 함수
-    - UUID 생성 후 선택된 옷 정보(`clothingIds`, `clothingNames`, `date`, `createdAt`)를 로컬 스토리지에 저장
-    - 저장 완료 후 홈 페이지로 자동 라우팅
-    - 동일 날짜 중복 저장 시 덮어쓰기 정책 결정 및 구현
-    - Playwright MCP로 옷 선택 → 저장 → 홈 이동 → 최근 착장 반영 플로우 테스트
+  - Notion에서 불러온 실제 옷 목록으로 선택 UI 구동
+  - 로컬 스토리지 CRUD 유틸리티 작성 (`src/lib/outfit-storage.ts`): 저장/조회/삭제 함수
+  - UUID 생성 후 선택된 옷 정보(`clothingIds`, `clothingNames`, `date`, `createdAt`)를 로컬 스토리지에 저장
+  - 저장 완료 후 홈 페이지로 자동 라우팅
+  - 동일 날짜 중복 저장 시 덮어쓰기 정책 결정 및 구현
+  - Playwright MCP로 옷 선택 → 저장 → 홈 이동 → 최근 착장 반영 플로우 테스트
 
 - **Task 011: 홈 페이지 실데이터 연동**
-    - 로컬 스토리지에서 최근 착장 목록 읽어오는 훅/유틸 구현
-    - 클라이언트 컴포넌트에서 로컬 스토리지 읽기 (hydration mismatch 방지)
-    - 날짜 내림차순 정렬 후 카드 렌더링
-    - 빈 상태 분기 처리 (로컬 스토리지 데이터 없음)
-    - Playwright MCP로 착장 기록 유무에 따른 UI 분기 테스트
+  - 로컬 스토리지에서 최근 착장 목록 읽어오는 훅/유틸 구현
+  - 클라이언트 컴포넌트에서 로컬 스토리지 읽기 (hydration mismatch 방지)
+  - 날짜 내림차순 정렬 후 카드 렌더링
+  - 빈 상태 분기 처리 (로컬 스토리지 데이터 없음)
+  - Playwright MCP로 착장 기록 유무에 따른 UI 분기 테스트
 
 - **Task 011-1: 핵심 기능 통합 테스트**
-    - Playwright MCP를 사용한 전체 사용자 플로우 E2E 테스트 (홈 → 오늘의 착장 → 저장 → 홈)
-    - Notion API 연동 및 로컬 스토리지 저장/조회 검증
-    - 카테고리 필터 + 검색 동시 적용 엣지 케이스 테스트
-    - 환경 변수 누락/잘못된 Notion ID 등 에러 핸들링 케이스 검증
-    - 모바일/태블릿/데스크톱 반응형 레이아웃 시각 회귀 점검
+  - Playwright MCP를 사용한 전체 사용자 플로우 E2E 테스트 (홈 → 오늘의 착장 → 저장 → 홈)
+  - Notion API 연동 및 로컬 스토리지 저장/조회 검증
+  - 카테고리 필터 + 검색 동시 적용 엣지 케이스 테스트
+  - 환경 변수 누락/잘못된 Notion ID 등 에러 핸들링 케이스 검증
+  - 모바일/태블릿/데스크톱 반응형 레이아웃 시각 회귀 점검
 
 ### Phase 4: 마감 및 배포
 
 - **Task 012: 반응형 최적화 및 접근성 보완**
-    - 모바일 네비게이션 UX 개선 (하단 고정 탭 또는 햄버거 메뉴 검토)
-    - 폰트 크기/터치 영역/대비 WCAG AA 기준 점검
-    - 키보드 네비게이션 및 포커스 아웃라인 확인
-    - 이미지 및 카드 그리드 반응형 재검증 (모바일 2열 기준)
-    - Lighthouse 모바일/데스크톱 성능 점검 및 Core Web Vitals 개선
+  - 모바일 네비게이션 UX 개선 (하단 고정 탭 또는 햄버거 메뉴 검토)
+  - 폰트 크기/터치 영역/대비 WCAG AA 기준 점검
+  - 키보드 네비게이션 및 포커스 아웃라인 확인
+  - 이미지 및 카드 그리드 반응형 재검증 (모바일 2열 기준)
+  - Lighthouse 모바일/데스크톱 성능 점검 및 Core Web Vitals 개선
 
 - **Task 013: 성능 최적화 및 배포**
-    - Next.js 15 캐싱 전략 재검토 (`fetch` / `unstable_cache` 적용)
-    - Notion API 응답 ISR 또는 on-demand revalidation 구성
-    - 환경 변수 Vercel 프로젝트 등록 및 배포 파이프라인 구성
-    - Vercel 배포 후 실환경 스모크 테스트 (Playwright MCP로 실제 도메인 점검)
-    - `npm run check-all` 및 `npm run build` 통과 확인
-    - README 배포 가이드 및 Notion 설정 가이드 정리
+  - Next.js 15 캐싱 전략 재검토 (`fetch` / `unstable_cache` 적용)
+  - Notion API 응답 ISR 또는 on-demand revalidation 구성
+  - 환경 변수 Vercel 프로젝트 등록 및 배포 파이프라인 구성
+  - Vercel 배포 후 실환경 스모크 테스트 (Playwright MCP로 실제 도메인 점검)
+  - `npm run check-all` 및 `npm run build` 통과 확인
+  - README 배포 가이드 및 Notion 설정 가이드 정리
