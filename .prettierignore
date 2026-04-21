@@ -39,3 +39,9 @@ Thumbs.db
 
 # Generated files
 next-env.d.ts
+
+# Shell scripts (no parser)
+**/*.sh
+
+# Gitignore files
+**/.gitignore
